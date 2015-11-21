@@ -3,7 +3,7 @@ Boneyard
 
 UI to explore bones.
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/HackTheDinos/boneyard)
 
 Setup & Configuration
 -----------
