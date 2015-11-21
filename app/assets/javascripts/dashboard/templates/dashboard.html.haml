@@ -1,1 +1,4 @@
-this is the dashboard
+%h1 Specimens
+%ul
+    %li{ ng: { repeat: 'specimen in specimens' } }
+        {{ specimen.id }} - {{ specimen.name }}

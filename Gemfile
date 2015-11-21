@@ -4,6 +4,7 @@ ruby '2.2.3'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-jquery', '~> 1.9.1'
+  gem 'rails-assets-lodash', '~> 3.9.3'
   gem 'rails-assets-angular', '~> 1.4.8'
   gem 'rails-assets-angular-resource', '~> 1.4.8'
   gem 'rails-assets-angular-route', '~> 1.4.8'

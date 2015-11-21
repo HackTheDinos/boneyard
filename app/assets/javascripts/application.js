@@ -10,6 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require lodash
 //= require jquery
 //= require angular
 //
@@ -17,4 +18,5 @@
 //= require angular-route
 //
 //= require app
+//= require common
 //= require dashboard
