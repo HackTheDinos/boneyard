@@ -3,6 +3,8 @@ Boneyard
 
 UI to explore bones.
 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
 Setup & Configuration
 -----------
 Prerequisites
