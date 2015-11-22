@@ -203,6 +203,7 @@ angular.module('boneyard')
 
             $timeout(function() {
                 $scope.loadData = true;
+                $scope.selectedSpecimen = undefined;
             }, LOAD_DELAY + DATA_LOAD_DELAY_OFFSET);
 
             playDots();
