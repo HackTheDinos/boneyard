@@ -1,0 +1,14 @@
+.form-control-feedback.iconic {
+    display: block;
+    line-height: 36px;
+    position: absolute;
+    top: 0;
+}
+
+input[type = "text"] {
+    box-shadow: none;
+
+    &:focus {
+        box-shadow: none;
+    }
+}

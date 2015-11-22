@@ -1,3 +1,30 @@
+@import 'bootstrap-variables';
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+@import 'bootstrap-overrides';
 @import 'iconic-bootstrap';
+
+@import 'modules/search-form';
+@import 'modules/specimen';
+@import 'modules/specimens';
+@import 'modules/table';
+
+::-webkit-input-placeholder {
+    font-family: $font-family-sans-serif;
+    font-style: italic;
+}
+
+:-ms-input-placeholder {
+    font-family: $font-family-sans-serif;
+    font-style: italic;
+}
+
+:-moz-placeholder {
+    font-family: $font-family-sans-serif;
+    font-style: italic;
+}
+
+::-moz-placeholder {
+    font-family: $font-family-sans-serif;
+    font-style: italic;
+}

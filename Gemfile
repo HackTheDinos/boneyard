@@ -8,6 +8,8 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-angular', '~> 1.4.8'
   gem 'rails-assets-angular-resource', '~> 1.4.8'
   gem 'rails-assets-angular-route', '~> 1.4.8'
+  gem 'rails-assets-angular-animate', '~> 1.4.8'
+  gem 'rails-assets-ngInfiniteScroll'
   gem 'rails-assets-bootstrap-ui', '~> 0.14.3'
 end
 

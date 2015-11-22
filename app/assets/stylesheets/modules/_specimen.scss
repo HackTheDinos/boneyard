@@ -1,0 +1,21 @@
+.specimen {
+    transition: all 0.4s cubic-bezier(.45, .45, 0, 1);
+
+    &.ng-enter {
+        opacity: 0;
+        transform: translate(50px, 0);
+    }
+
+    &.ng-enter-stagger {
+        transition-delay: 0.1s;
+
+        /* As of 1.4.4, this must always be set: it signals ngAnimate
+        to not accidentally inherit a delay property from another CSS class */
+        transition-duration: 0s;
+    }
+
+    &.ng-enter.ng-enter-active {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}

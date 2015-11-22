@@ -1,12 +1,34 @@
-%main.container
-    %section
-        %h1 Search
-        %input.form-control{ type: 'text' }
-        %btn.btn.btn-primary{ ng: { click: 'search()' } }
-            %span.iconic.iconic-magnifying-glass{ aria: { hidden: 'true' }, title: 'Search' } &nbsp;Search
+%section.container
+    .search-form
+        .row
+            .col-xs-8.col-xs-offset-2
+                %h1 BONEYARD
+                .form-group.has-feedback
+                    %input.search-form--search.form-control{ type: 'text', placeholder: 'Search for a scanned fossil specimen' }
+                    %span.iconic.iconic-md.iconic-magnifying-glass.form-control-feedback{ aria: { hidden: 'true' }, title: 'Search' }
+                .search-form--advanced-toggle Advanced Filters
 
-    %section
-        %h1 Results
-        %ul
-            %li{ ng: { repeat: 'specimen in specimens' } }
-                {{ specimen.id }} - {{ specimen.name }}
+%section.specimens
+    .container
+        .table--header.row
+            .col-xs-2 Specimen ID
+            .col-xs-3 Scientific Name
+            .col-xs-2 Common Name
+            .col-xs-2 Bone Type
+            .col-xs-2 Fossil Group
+            .col-xs-1 Render
+
+        %div{ infinite_scroll: 'loadMore()', infinite_scroll_distance: '.5' }
+            .table--row.specimen.row{ ng: { repeat: 'image in images' } }
+                .col-xs-2
+                    AMNH-1009911
+                .col-xs-3
+                    %i Acrocanthosaurus atakenesis
+                .col-xs-2
+                    Theropod Dinosaur
+                .col-xs-2
+                    Brain Case
+                .col-xs-2
+                    Non-avian Dinosaur
+                .col-xs-1
+                    STL

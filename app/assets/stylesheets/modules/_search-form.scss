@@ -1,0 +1,39 @@
+.search-form {
+    padding: {
+        bottom: 50px;
+        top: 140px;
+    }
+
+    &--search {
+        border: {
+            color: $brand-primary;
+            width: 2px;
+        }
+        font-size: 20px;
+        padding: 30px;
+
+        &:active, &:focus {
+            border-color: $brand-primary;
+        }
+    }
+
+    &--advanced-toggle {
+        color: $brand-primary;
+        float: right;
+    }
+
+    .form-group {
+        margin-bottom: 10px;
+    }
+
+    .form-control-feedback.iconic {
+        color: $brand-primary;
+        line-height: 65px;
+        right: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 80px;
+    }
+}

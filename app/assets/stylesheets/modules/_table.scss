@@ -1,0 +1,25 @@
+.table {
+    &--header {
+        font-weight: 700;
+        padding: 30px;
+    }
+
+    &--row {
+        cursor: pointer;
+        padding: 20px;
+
+        & + & {
+            border-top: 1px solid #555;
+        }
+
+        &:hover {
+            color: $brand-dark;
+            background-color: $brand-primary;
+            border-radius: 5px;
+
+            + .table--row {
+                border-color: $brand-dark;
+            }
+        }
+    }
+}
