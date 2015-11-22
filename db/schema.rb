@@ -11,18 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151122051436) do
+ActiveRecord::Schema.define(version: 20151122133822) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "rendered_assets", force: :cascade do |t|
-    t.integer  "specimen_id",                       null: false
+    t.integer  "specimen_id",                        null: false
     t.string   "uri"
     t.string   "name"
-    t.string   "status",      default: "uploading", null: false
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
+    t.string   "status",       default: "uploading", null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.string   "sketchfab_id"
   end
 
   create_table "scans", force: :cascade do |t|

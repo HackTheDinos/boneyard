@@ -29,10 +29,10 @@ class Api::RenderedAssetsController < Api::BaseController
   end
 
   def create_params
-    params.permit(:uri, :name).merge(specimen: @specimen)
+    params.permit(:uri, :name, :sketchfab_id).merge(specimen: @specimen)
   end
 
   def update_params
-    params.permit(:status, :uri, :name)
+    params.permit(:status, :uri, :name, :sketchfab_id)
   end
 end
