@@ -26,6 +26,7 @@ angular.module('boneyard')
             appendParameter(parameters, 'scientific_name');
             appendParameter(parameters, 'common_name');
             appendParameter(parameters, 'bone_type');
+            appendParameter(parameters, 'fossil_group');
             appendParameter(parameters, 'museum');
 
             $scope.searchQuery = _.cloneDeep(parameters);
@@ -46,6 +47,7 @@ angular.module('boneyard')
                  appendParameter(parameters, 'scientific_name');
                  appendParameter(parameters, 'common_name');
                  appendParameter(parameters, 'bone_type');
+                appendParameter(parameters, 'fossil_group');
                  appendParameter(parameters, 'museum');
 
                  $scope.searchQuery = _.cloneDeep(parameters);
@@ -116,8 +118,13 @@ angular.module('boneyard')
                 $('html, body').animate({
                     scrollTop: $('.specimens--list').offset().top
                 }, 400);
-                scrubberInit();
-                sketchFabInit();
+
+                $timeout(function() {
+                    sketchFabInit();
+                }, 2000);
+                $timeout(function() {
+                    scrubberInit();
+                }, 1500);
             }, 600);
 
             $timeout(function() {
@@ -175,7 +182,8 @@ angular.module('boneyard')
                                 detector_timing_value: _.random(200.0, 500.0),
                                 xray_current: _.random(100, 240),
                                 xray_voltage: _.random(100, 240),
-                                author: $scope.fake('doctor')
+                                author: $scope.fake('doctor'),
+                                stls: [$scope.fake('boneType'),$scope.fake('boneType'),$scope.fake('boneType')]
                             }))
                         );
                     });
@@ -211,7 +219,7 @@ angular.module('boneyard')
         function sketchFabInit(){
           var iframe = document.getElementById( 'api-frame' );
           var version = '1.0.0';
-          var urlid = '39ca8ccb091642859f680fbc59a24d4b';
+          var urlid = _.sample(['39ca8ccb091642859f680fbc59a24d4b', '690d784213d34349b6d4c91ef082b4f8', 'e56c4b2ff81c46958e41bf6d41d7b7c4', 'd2a24a72253f423cbbfb2f236e1de43b', 'bcd50e18890b43918e0fe8820b6e3104']);
           var client = new Sketchfab( version, iframe );
 
           client.init( urlid, {
