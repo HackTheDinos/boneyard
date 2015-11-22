@@ -11,9 +11,47 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20151122023346) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "rendered_assets", force: :cascade do |t|
+    t.integer  "specimen_id_id"
+    t.string   "uri"
+    t.string   "name"
+    t.string   "type"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "scans", force: :cascade do |t|
+    t.integer  "specimen_id_id"
+    t.string   "preview_uri"
+    t.text     "images"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "specimen", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "scanned_at"
+    t.float    "geometry_voxel_y"
+    t.float    "geometry_voxel_x"
+    t.integer  "xray_voltage"
+    t.integer  "xray_current"
+    t.integer  "ct_number_images"
+    t.integer  "calib_averaging"
+    t.integer  "calib_num_image"
+    t.integer  "calib_skip"
+    t.integer  "detector_timing_value"
+    t.string   "specimen_number"
+    t.string   "scientific_name"
+    t.string   "common_name"
+    t.string   "bone_type"
+    t.string   "author"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
 
 end
