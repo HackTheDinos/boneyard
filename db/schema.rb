@@ -11,29 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151122023346) do
+ActiveRecord::Schema.define(version: 20151122051436) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "rendered_assets", force: :cascade do |t|
-    t.integer  "specimen_id"
-    t.string   "uri"
-    t.string   "name"
-    t.string   "type"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "specimen_id",                       null: false
+    t.string   "uri",                               null: false
+    t.string   "name",                              null: false
+    t.string   "status",      default: "uploading", null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
   end
 
   create_table "scans", force: :cascade do |t|
-    t.integer  "specimen_id"
+    t.integer  "specimen_id",                       null: false
     t.string   "preview_uri"
-    t.text     "images"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.text     "images",                            null: false
+    t.string   "status",      default: "uploading", null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
   end
 
-  create_table "specimen", force: :cascade do |t|
+  create_table "specimens", force: :cascade do |t|
     t.string   "name"
     t.datetime "scanned_at"
     t.float    "geometry_voxel_y"
@@ -45,13 +46,16 @@ ActiveRecord::Schema.define(version: 20151122023346) do
     t.integer  "calib_num_image"
     t.integer  "calib_skip"
     t.integer  "detector_timing_value"
-    t.string   "specimen_number"
+    t.string   "institutional_id"
     t.string   "scientific_name"
     t.string   "common_name"
     t.string   "bone_type"
     t.string   "author"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.string   "status",                default: "uploading", null: false
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
   end
+
+  add_index "specimens", ["institutional_id"], name: "index_specimens_on_institutional_id", unique: true, using: :btree
 
 end

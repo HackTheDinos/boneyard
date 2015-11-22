@@ -1,7 +1,8 @@
-class CreateSpecimen < ActiveRecord::Migration
+class CreateSpecimens < ActiveRecord::Migration
   def change
-    create_table :specimen do |t|
+    create_table :specimens do |t|
       t.string :name
+      # PCA DATA
       t.timestamp :scanned_at
       t.float :geometry_voxel_y
       t.float :geometry_voxel_x
@@ -12,11 +13,13 @@ class CreateSpecimen < ActiveRecord::Migration
       t.integer :calib_num_image
       t.integer :calib_skip
       t.integer :detector_timing_value
-      t.string :specimen_number
+
+      t.string :institutional_id
       t.string :scientific_name
       t.string :common_name
       t.string :bone_type
       t.string :author
+      t.string :status, null: false, default: 'uploading'
 
       t.timestamps null: false
     end
