@@ -1,7 +1,11 @@
 Boneyard
 ============
 
-A modern interface to explore fossil scans. See it live at [Boneyard.io](http://www.boneyard.io/)
+A modern interface to explore fossil scans.
+
+[Presentation Link](https://docs.google.com/presentation/d/1L0dVpvMgxHj4O7nM1giSrE0ZjcUYuJUkTaCw0ANI2ko/edit?usp=sharing)
+
+Website: [Boneyard.io](http://www.boneyard.io/)
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/HackTheDinos/boneyard)
 
