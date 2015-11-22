@@ -6,5 +6,15 @@ angular.module('boneyard')
             .all()
             .then(function(specimens) {
                 $scope.specimens = specimens;
-            })
+            });
+
+        $scope.search = function() {
+
+        };
+
+        function initialize() {
+
+        }
+
+        initialize();
     });
