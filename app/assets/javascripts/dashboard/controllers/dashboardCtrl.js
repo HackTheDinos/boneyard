@@ -183,6 +183,7 @@ angular.module('boneyard')
                                 xray_current: _.random(100, 240),
                                 xray_voltage: _.random(100, 240),
                                 author: $scope.fake('doctor'),
+                                sprite: 'background-image: url("sheet_'+ _.random(0, 9) + '.png");',
                                 stls: [$scope.fake('boneType'),$scope.fake('boneType'),$scope.fake('boneType')]
                             }))
                         );
