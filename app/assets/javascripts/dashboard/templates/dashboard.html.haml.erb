@@ -57,7 +57,7 @@
         .container{ ng: { class: "{ 'is-loaded': isListLoaded, 'is-unloaded': isDetailLoaded }" } }
             .specimens--header
                 Explore some
-                %span.specimens--header-count 21,805,450
+                %span.specimens--header-count {{ totalSpecimens | number }}
                 fossil scans
 
             .table--header.row
@@ -72,15 +72,15 @@
                 .table--body{ infinite_scroll: 'loadMore()', infinite_scroll_distance: '.5' }
                     .table--row.specimen.row{ ng: { repeat: 'specimen in specimens', click: 'openDetails(specimen)', class: "{ 'is-hidden': !specimen.selected && rowSelected }" } }
                         .col-xs-2
-                            AMNH-1009911
+                            {{ specimen.name }}
                         .col-xs-3
-                            %i Acrocanthosaurus atakenesis
+                            %i {{ specimen.scientific_name }}
                         .col-xs-2
-                            Theropod Dinosaur
+                            {{ specimen.common_name }}
                         .col-xs-2
-                            Brain Case
+                            {{ specimen.bone_type }}
                         .col-xs-2
-                            Non-avian Dinosaur
+                            {{ specimen.fossil_group }}
                         .col-xs-1
                             STL
 
