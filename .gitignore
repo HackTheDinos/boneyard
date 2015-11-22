@@ -27,3 +27,5 @@ doc
 # Ignore IDE config files
 .idea
 .env
+
+.byebug_history

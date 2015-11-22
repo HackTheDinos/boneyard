@@ -13,7 +13,7 @@ class Api::RenderedAssetsController < Api::BaseController
   end
 
   def update
-    success = RenderedAsset.update_attributes(update_params)
+    success = @rendered_asset.update_attributes(update_params)
     render json: @rendered_asset
   end
 
@@ -29,10 +29,10 @@ class Api::RenderedAssetsController < Api::BaseController
   end
 
   def create_params
-    params.permit(:uri, :name)
+    params.permit(:uri, :name).merge(specimen: @specimen)
   end
 
   def update_params
-    params.permit(:status).merge(specimen: @specimen)
+    params.permit(:status, :uri, :name)
   end
 end
