@@ -4,6 +4,14 @@ RSpec.describe Api::SpecimensController, type: :controller do
   let(:json) { JSON.parse(response.body) }
   let(:specimen) { create(:specimen) }
 
+  describe '#index' do
+    it 'queries' do
+      create(:specimen, institutional_id: 3)
+      get :index, { institutional_id: 3 }
+      expect(json.length).to eq 1
+    end
+  end
+
   describe '#create' do
     it 'succeeds' do
       post :create, { }

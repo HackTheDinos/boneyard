@@ -2,7 +2,7 @@ class Api::SpecimensController < Api::BaseController
   before_action :set_specimen, only: [:show, :update]
 
   def index
-    @specimens = specimen.where(where_params)
+    @specimens = Specimen.where(where_params)
     render json: @specimens
   end
 
