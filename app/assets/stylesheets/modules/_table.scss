@@ -1,6 +1,9 @@
 .table {
     &--header {
-        font-weight: 700;
+        font: {
+            size: 18px;
+            weight: 700;
+        }
         padding: 30px;
     }
 

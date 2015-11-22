@@ -1,14 +1,11 @@
 .search-form {
     padding: {
-        bottom: 50px;
+        bottom: 80px;
         top: 140px;
     }
 
     &--search {
-        border: {
-            color: $brand-primary;
-            width: 2px;
-        }
+        border: 2px solid $brand-primary;
         font-size: 20px;
         padding: 30px;
 
@@ -18,12 +15,72 @@
     }
 
     &--advanced-toggle {
+        cursor: pointer;
         color: $brand-primary;
         float: right;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &--advanced {
+        display: none;
+        bottom: -494px;
+        margin: -15px;
+        padding: 15px;
+        position: absolute;
+        width: 100%;
+        z-index: 5;
+
+        .btn-primary {
+            float: right;
+            margin-top: 15px;
+            padding: 10px 40px;
+        }
+
+        ::-webkit-input-placeholder {
+           color: #f2f2f2;
+       }
+
+       :-ms-input-placeholder {
+           color: #f2f2f2;
+       }
+
+       :-moz-placeholder {
+           color: #f2f2f2;
+       }
+
+       ::-moz-placeholder {
+           color: #f2f2f2;
+       }
+    }
+
+    &--advanced-body {
+        background: #fff;
+        border: 2px solid $brand-primary;
+        padding: 35px 40px 90px 20px;
+
+        label {
+            font: {
+                size: 12px;
+                weight: 400;
+            }
+            text-transform: uppercase;
+        }
+
+        input[type = "text"] {
+            border: {
+                left: none;
+                right: none;
+                top: none;
+            }
+            font-size: 20px;
+        }
     }
 
     .form-group {
-        margin-bottom: 10px;
+        margin-bottom: 15px;
     }
 
     .form-control-feedback.iconic {
@@ -32,8 +89,51 @@
         right: 20px;
     }
 
-    h1 {
-        text-align: center;
-        margin-bottom: 80px;
+    .checkbox {
+        font-family: $font-family-sans-serif;
+        padding-left: 0;
+    }
+
+    :not(#foo) .checkbox input[type = "checkbox"] {
+        position: absolute;
+        opacity: 0;
+
+        & + label {
+            position: relative;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        & + label:before {
+            background: #fff;
+            border: 1px solid #ccc;
+            content: '';
+            display: inline-block;
+            height: 20px;
+            margin: {
+                right: 10px;
+                top: 2px;
+            }
+            transition: background 200ms, border 200ms;
+            vertical-align: text-top;
+            width: 20px;
+        }
+
+        &:checked + label:before {
+            background: $brand-primary;
+            border-color: $brand-primary;
+        }
+
+        &:checked + label:after {
+            background: #fff;
+            box-shadow: 2px 0 0 #fff, 4px 0 0 #fff, 4px -2px 0 #fff, 4px -4px 0 #fff, 4px -6px 0 #fff, 4px -8px 0 #fff;
+            content: '';
+            height: 2px;
+            left: 5px;
+            @include rotate(40deg);
+            top: 12px;
+            width: 2px;
+            position: absolute;
+        }
     }
 }

@@ -1,5 +1,58 @@
 .specimens {
     background-color: $brand-dark;
     color: #fff;
-    padding-top: 50px;
+    min-height: 600px;
+    padding-top: 30px;
+
+    .container {
+        opacity: 0;
+        transition: all 0.4s cubic-bezier(.45, .45, 0, 1);
+
+        &.is-loaded {
+            opacity: 1;
+        }
+    }
+
+    &--loader-dots {
+        height: 100px;
+    }
+
+    &--loader-dot {
+        background-color: transparent;
+        border-radius: 50%;
+        height: 1px;
+        margin: 8px auto;
+        transition: all 0.2s cubic-bezier(.45, .45, 0, 1);
+        width: 1px;
+
+        &.is-loaded {
+            background-color: #fff;
+            height: 3px;
+            width: 3px;
+        }
+
+        &.is-active {
+            background-color: transparent;
+            border: 2px solid $brand-primary;
+            border-radius: 50%;
+            height: 10px;
+            width: 10px;
+        }
+    }
+
+    &--header {
+        font: {
+            size: 20px;
+            weight: 700;
+        }
+        margin-bottom: 80px;
+        text: {
+            align: center;
+            transform: uppercase;
+        }
+    }
+
+    &--header-count {
+        color: $brand-primary;
+    }
 }
