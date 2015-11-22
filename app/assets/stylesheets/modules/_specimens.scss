@@ -97,7 +97,7 @@
         //     width: 150px;
         // }
     }
-    
+
     &--detail-thumbnail {
         width: 125px;
         height: 125px;
@@ -154,7 +154,7 @@
 
 .metadata__item {
     margin-left: 29px;
-    margin-top: 5px;    
+    margin-top: 5px;
 }
 
 .metadata__item-icon {
@@ -177,7 +177,7 @@
 .figure {
     border-bottom: 3px solid $brand-primary;
     margin-top: 50px;
-    padding-bottom: 50px; 
+    padding-bottom: 50px;
 
     &:last-child {
         border-bottom: 0;
@@ -207,4 +207,19 @@
         color: $brand-primary;
         font-weight: bold;
     }
+}
+
+// scrubber styles
+.spriteslider {
+  margin: 20px auto;
+  padding: 60px;
+  width: 128px;
+  background: #FCFEFC;
+  border-radius: 5px;
+}
+#spritetarget {
+  width: 640px;
+  height: 480px;
+  background-image: image-url('sprite_sheet.png');
+  background-repeat: repeat-x;
 }
