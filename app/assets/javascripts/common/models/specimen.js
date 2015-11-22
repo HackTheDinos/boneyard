@@ -10,7 +10,7 @@ angular.module('boneyard')
             'xray_current', 'ct_number_images', 'calib_averaging', 'calib_num_image', 'calib_skip',
             'detector_timing_value', 'institutional_id', 'scientific_name', 'common_name',
             'bone_type', 'author', 'status', 'created_at', 'updated_at', 'stls',
-            'fossil_group', 'museum'
+            'fossil_group', 'museum', 'sprite'
         ];
 
         function Specimen(attributes) {
