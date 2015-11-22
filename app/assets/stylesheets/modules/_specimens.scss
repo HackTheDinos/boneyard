@@ -210,16 +210,28 @@
 }
 
 // scrubber styles
+
 .spriteslider {
-  margin: 20px auto;
-  padding: 60px;
-  width: 128px;
-  background: #FCFEFC;
-  border-radius: 5px;
+    width: 480px;
+    overflow: hidden;
+    position: relative;
 }
+
 #spritetarget {
-  width: 640px;
-  height: 480px;
-  background-image: image-url('sprite_sheet.png');
-  background-repeat: repeat-x;
+    margin-left: -80px;
+    width: 640px;
+    height: 480px;
+    background-image: image-url('sprite_sheet.png');
+    background-repeat: repeat-x;
+}
+
+.spriteslider--help {
+    background: $brand-primary;
+    bottom: 0;
+    color: #fff;
+    opacity: .95;
+    padding: 10px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
 }
