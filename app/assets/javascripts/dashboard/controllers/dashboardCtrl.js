@@ -135,4 +135,19 @@ angular.module('boneyard')
         }
 
         initialize();
+
+        $scope.fake = function(type) {
+            var faked = {
+                fossilGroup: [
+                    'Non-vertebrates','Other Fish-like Creatures','Amphibians','Mammals and Their Extinct Relatives','Turtles','Lizards, Snakes and Their Relatives','Alligators and Crocodiles','Birds','Dinosaurs and Extinct Relatives','Primates','Bats'
+                ],
+                commonName: [
+                    'Acanthopholis','Acrocanthosaurus','Adasaurus','Aegyptosaurus','Aeolosaurus','Afrovenator','Agilisaurus','Alamosaurus','Albertosaurus','Alectrosaurus','Algoasaurus','Alioramus','Allosaurus','Altispinax','Alvarezsaurus','Alxasaurus','Amargasaurus','Ammosaurus','Amtosaurus','Amygdalodon','Anatotitan','Anchiceratops','Anchisaurus','Andesaurus','Ankylosaurus','Anserimimus','Antarctosaurus','Antrodemus','Apatosaurus','Aralosaurus','Archaeopteryx','Archaeornithoides','Archaeornithomimus','Argentinosaurus','Argyrosaurus','Arrhinoceratops','Atlascopcosaurus','Aublysodon','Austrosaurus','Avaceratops','Avimimus','Bactrosaurus','Bagaceratops','Bahariasaurus','Barapasaurus','Barosaurus','Baryonyx','Bellusaurus','Bothriospondylus','Brachiosaurus','Brachyceratops','Brachylophosaurus','Bradycneme','Caenagnathus','Calamospondylus','Callovosaurus','Camarasaurus','Camelotia','Camptosaurus','Carcharodontosaurus','Carnotaurus','Ceratops','Ceratosaurus','Cetiosauriscus','Cetiosaurus','Chasmosaurus','Chialingosaurus','Chilantaisaurus','Chindesaurus','Chingkankousaurus','Chirostenotes','Chubutisaurus','Chungkingosaurus','Claosaurus','Coelophysis','Coelurus','Coloradisaurus','Compsognathus','Conchoraptor','Corythosaurus','Dacentrurus','Daspletosaurus','Datousaurus','Deinocheirus','Deinodon','Deinonychus','Diceratops','Dicraeosaurus','Dilophosaurus','Diplodocus','Dracopelta','Dravidosaurus','Dromaeosaurus','Dromiceiomimus','Dryosaurus','Dryptosaurus','Dyslocosaurus','Dystylosaurus'
+                ],
+                scientificName: [
+                    'Echinodon','Edmontosaurus','Elaphrosaurus','Elmisaurus','Emausaurus','Enigmosaurus','Eoceratops','Eoraptor','Erectopus','Erlikosaurus','Eucentrosaurus','Euhelopus','Euoplocephalus','Euskelosaurus','Eustreptospondylus','Fabrosaurus','Frenguellisaurus','Gallimimus','Garudimimuss','Gasosauruss','Genyodectess','Geranosauruss','Goyocephales','Gravitholuss','Gryposaurus','Hadrosaurus','Halticosaurus','Haplocanthosaurus','Harpymimus','Heptasteornis','Herrerasaurus','Heterodontosaurus','Homalocephale','Hoplitosaurus','Huayangosaurus','Hylaeosaurus','Hypacrosaurus','Hypselosaurus','Hypsilophodon'
+                ]
+            };
+            return _.sample(faked[type]);
+        }
     });
