@@ -1,4 +1,7 @@
 %h1 Specimens
+%input{ type: 'text' }
+%btn.btn.btn-primary
+    %span.iconic.iconic-magnifying-glass{ aria: { hidden: 'true' }, title: 'Search' } &nbsp;Search
 %ul
     %li{ ng: { repeat: 'specimen in specimens' } }
         {{ specimen.id }} - {{ specimen.name }}
