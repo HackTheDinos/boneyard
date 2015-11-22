@@ -93,6 +93,7 @@ angular.module('boneyard')
                     scrollTop: $('.specimens--list').offset().top
                 }, 400);
                 scrubberInit();
+                sketchFabInit();
             }, 600);
 
             $timeout(function() {
@@ -174,6 +175,25 @@ angular.module('boneyard')
 
             search();
             addFakeSpecimens();
+        }
+
+        function sketchFabInit(){
+          var iframe = document.getElementById( 'api-frame' );
+          var version = '1.0.0';
+          var urlid = '39ca8ccb091642859f680fbc59a24d4b';
+          var client = new Sketchfab( version, iframe );
+
+          client.init( urlid, {
+              success: function onSuccess( api ){
+                  api.start();
+                  api.addEventListener( 'viewerready', function() {
+                  } );
+              },
+              error: function onError() {
+                  console.log( 'Viewer error' );
+              },
+              autospin: 1
+          } );
         }
 
         function scrubberInit(){
