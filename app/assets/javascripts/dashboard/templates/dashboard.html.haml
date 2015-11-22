@@ -1,8 +1,12 @@
 %main.container
-    %h1 Specimens
-    %input.form-control{ type: 'text' }
-    %btn.btn.btn-primary{ ng: { click: 'search()' } }
-        %span.iconic.iconic-magnifying-glass{ aria: { hidden: 'true' }, title: 'Search' } &nbsp;Search
-    %ul
-        %li{ ng: { repeat: 'specimen in specimens' } }
-            {{ specimen.id }} - {{ specimen.name }}
+    %section
+        %h1 Search
+        %input.form-control{ type: 'text' }
+        %btn.btn.btn-primary{ ng: { click: 'search()' } }
+            %span.iconic.iconic-magnifying-glass{ aria: { hidden: 'true' }, title: 'Search' } &nbsp;Search
+
+    %section
+        %h1 Results
+        %ul
+            %li{ ng: { repeat: 'specimen in specimens' } }
+                {{ specimen.id }} - {{ specimen.name }}
