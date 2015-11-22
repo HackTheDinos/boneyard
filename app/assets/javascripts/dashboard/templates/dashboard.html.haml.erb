@@ -89,9 +89,77 @@
                 %span.iconic.iconic-chevron-left
                 Back to search results
 
-            .specimens--detail-summary
-                %img{ src: '<%= image_url('preview.png') %>' }
-                .specimens--detail-name
-                    %span.specimens--detail-tag AMNH-1009911
-                    .specimens--detail-name-header Acrocanthosaurus atakenesis, Brain Case
-                    .specimens--detail-name-subheader Theropod Dinosaur, Non-avian Dinosaur
+            .specimens--detail-summary.row
+                .col-xs-2
+                    %img.specimens--detail-thumbnail{ src: '<%= image_url('preview.png') %>' }
+                .col-xs-8
+                    .specimens--detail-name
+                        %span.specimens--detail-tag AMNH-1009911
+                        .specimens--detail-name-header
+                            %em Acrocanthosaurus atakenesis,
+                            Brain Case
+                        .specimens--detail-name-subheader Theropod Dinosaur, Non-avian Dinosaur
+                .col-xs-2
+                    .specimens--detail-download
+                        %button.btn.btn-primary Download
+
+            .metadata.row
+                .col-xs-6
+                    %ul.metadata__list
+                        %li.metadata__item-icon
+                            %span.iconic.iconic-settings
+                            %span.metadata__property Voxel Size
+                            %span.metadata__value 2&mu;m
+                        %li.metadata__item
+                            %span.metadata__property Number of images
+                            %span.metadata__value 18
+                        %li.metadata__item
+                            %span.metadata__property Averaging
+                            %span.metadata__value 2
+                        %li.metadata__item
+                            %span.metadata__property Skip
+                            %span.metadata__value 3
+                        %li.metadata__item
+                            %span.metadata__property Timing Value
+                            %span.metadata__value 400.145
+                        %li.metadata__item
+                            %span.metadata__property Current
+                            %span.metadata__value 130
+                        %li.metadata__item
+                            %span.metadata__property KiloVolts
+                            %span.metadata__value 140
+                
+                .col-xs-6
+                    %ul.metadata__list
+                        %li.metadata__item-icon
+                            %span.iconic.iconic-clock
+                            %span.metadata__property Date
+                            %span.metadata__value 22 November 2015
+                        %li.metadata__item-icon
+                            %span.iconic.iconic-person-genderless
+                            %span.metadata__property Author
+                            %span.metadata__value Ms. Megan Demarest
+                        %li.metadata__item-icon
+                            %span.iconic.iconic-map
+                            %span.metadata__property Museum
+                            %span.metadata__value Mongolian Academy of Sciences
+
+            .figure.row
+                .col-xs-6
+                    %iframe{width: "500", height: "500", src: "https://sketchfab.com/models/c6d83594bcef4609aee4df9ddc653aeb/embed", frameborder: "0", allowfullscreen: "", mozallowfullscreen: "true", webkitallowfullscreen: "true", onmousewheel: ""}
+                .col-xs-6
+                    %h2 Scans
+                    .figure__listing
+                        .figure__listing-item.figure__listing-item--active Coronal
+                        .figure__listing-item Horizontal
+                        .figure__listing-item Sagital
+
+            .figure.row
+                .col-xs-6
+                    %iframe{width: "500", height: "500", src: "https://sketchfab.com/models/c6d83594bcef4609aee4df9ddc653aeb/embed", frameborder: "0", allowfullscreen: "", mozallowfullscreen: "true", webkitallowfullscreen: "true", onmousewheel: ""}
+                .col-xs-6
+                    %h2 Renders
+                    .figure__listing
+                        .figure__listing-item.figure__listing-item--active STL
+                        .figure__listing-item STL
+                        .figure__listing-item STL
