@@ -84,7 +84,7 @@
                         .col-xs-1
                             STL
 
-        .specimens--detail.container{ ng: { class: "{ 'is-loaded': isDetailLoaded }" } }
+        .specimens--detail.container{ ng: { if: 'selectedSpecimen', class: "{ 'is-loaded': isDetailLoaded }" } }
             .specimens--detail-back{ ng: { click: 'search()' } }
                 %span.iconic.iconic-chevron-left
                 Back to search results
@@ -94,11 +94,11 @@
                     %img.specimens--detail-thumbnail{ src: '<%= image_url('preview.png') %>' }
                 .col-xs-8
                     .specimens--detail-name
-                        %span.specimens--detail-tag AMNH-1009911
+                        %span.specimens--detail-tag {{ selectedSpecimen.name }}
                         .specimens--detail-name-header
-                            %em Acrocanthosaurus atakenesis,
-                            Brain Case
-                        .specimens--detail-name-subheader Theropod Dinosaur, Non-avian Dinosaur
+                            %em {{ selectedSpecimen.scientific_name }},
+                            {{ selectedSpecimen.bone_type }}
+                        .specimens--detail-name-subheader {{ selectedSpecimen.common_name }}, {{ selectedSpecimen.fossil_group }}
                 .col-xs-2
                     .specimens--detail-download
                         %button.btn.btn-primary Download
@@ -112,22 +112,22 @@
                             %span.metadata__value 2&mu;m
                         %li.metadata__item
                             %span.metadata__property Number of images
-                            %span.metadata__value 18
+                            %span.metadata__value {{ selectedSpecimen.calib_num_image }}
                         %li.metadata__item
                             %span.metadata__property Averaging
-                            %span.metadata__value 2
+                            %span.metadata__value {{ selectedSpecimen.calib_averaging }}
                         %li.metadata__item
                             %span.metadata__property Skip
-                            %span.metadata__value 3
+                            %span.metadata__value {{ selectedSpecimen.calib_skip }}
                         %li.metadata__item
                             %span.metadata__property Timing Value
-                            %span.metadata__value 400.145
+                            %span.metadata__value {{ selectedSpecimen.detector_timing_value }}
                         %li.metadata__item
                             %span.metadata__property Current
-                            %span.metadata__value 130
+                            %span.metadata__value {{ selectedSpecimen.xray_current }}
                         %li.metadata__item
                             %span.metadata__property KiloVolts
-                            %span.metadata__value 140
+                            %span.metadata__value {{ selectedSpecimen.xray_voltage }}
                 
                 .col-xs-6
                     %ul.metadata__list
@@ -142,7 +142,7 @@
                         %li.metadata__item-icon
                             %span.iconic.iconic-map
                             %span.metadata__property Museum
-                            %span.metadata__value Mongolian Academy of Sciences
+                            %span.metadata__value {{ selectedSpecimen.museum }}
 
             .figure.row
                 .col-xs-6
