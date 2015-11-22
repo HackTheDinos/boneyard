@@ -17,7 +17,7 @@ class Api::SpecimensController < Api::BaseController
   end
 
   def create
-    @specimen = Specimen.create(create_params)
+    @specimen = Specimen.create(update_params)
     return render_validation_errors(@specimen) unless @specimen.valid?
     render json: @specimen
   end
