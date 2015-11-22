@@ -14,6 +14,15 @@
         }
     }
 
+    .form-control-feedback.iconic-magnifying-glass {
+        cursor: pointer;
+        pointer-events: all;
+
+        &:hover {
+            color: lighten($brand-primary, 20%);
+        }
+    }
+
     &--advanced-toggle {
         cursor: pointer;
         color: $brand-primary;

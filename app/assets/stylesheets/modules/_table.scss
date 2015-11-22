@@ -15,6 +15,10 @@
             border-top: 1px solid #555;
         }
 
+        &.is-hidden {
+            opacity: 0;
+        }
+
         &:hover {
             color: $brand-dark;
             background-color: $brand-primary;

@@ -1,8 +1,16 @@
 .specimens {
-    background-color: $brand-dark;
-    color: #fff;
-    min-height: 600px;
-    padding-top: 30px;
+    .specimens--list {
+        background-color: $brand-dark;
+        color: #fff;
+        min-height: 1000px;
+        padding-top: 30px;
+        transition: all 0.4s cubic-bezier(.45, .45, 0, 1);
+
+        &.has-details {
+            background-color: $brand-primary-light;
+            color: $text-color;
+        }
+    }
 
     .container {
         opacity: 0;
@@ -10,6 +18,10 @@
 
         &.is-loaded {
             opacity: 1;
+        }
+
+        &.is-unloaded {
+            display: none;
         }
     }
 
@@ -54,5 +66,60 @@
 
     &--header-count {
         color: $brand-primary;
+    }
+
+    &--detail {
+        color: $text-color;
+    }
+
+    &--detail-back {
+        color: $brand-primary;
+        cursor: pointer;
+        margin-top: 30px;
+
+        .iconic {
+            font-size: 11px;
+            margin-right: 4px;
+        }
+
+        &:hover {
+            color: $brand-dark;
+        }
+    }
+
+    &--detail-summary {
+        border-bottom: 3px solid $brand-primary;
+        height: 190px;
+        margin-top: 50px;
+
+        img {
+            float: left;
+            width: 150px;
+        }
+    }
+
+    &--detail-name {
+        float: left;
+        margin-left: 35px;
+    }
+
+    &--detail-tag {
+        background-color: #666;
+        color: #fff;
+        display: inline-block;
+        margin-bottom: 8px;
+        padding: 7px 15px;
+    }
+
+    &--detail-name-header {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+
+    &--detail-name-subheader {
+        color: #888;
+        margin-bottom: 5px;
+        text-transform: uppercase;
     }
 }

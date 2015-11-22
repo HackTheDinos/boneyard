@@ -13,10 +13,20 @@ angular.module('boneyard')
         $scope.loaderDots = _.times(LOADER_DOTS, function() {
             return false;
         });
+        $scope.rowSelected = false;
 
         $scope.filter = function() {
             $('.search-form--advanced').fadeOut(100);
+            search();
         };
+
+        $scope.quickSearch = function(keyEvent) {
+            if (keyEvent.which === 13) {
+                search();
+            }
+        };
+
+        $scope.search = search;
 
         $('body').on('click', function() {
             $('.search-form--advanced').fadeOut(100);
@@ -37,7 +47,12 @@ angular.module('boneyard')
             return false;
         });
 
-        function loadDots() {
+        function playDots() {
+            dotIndex = 0;
+            _.times(LOADER_DOTS, function(index) {
+                $scope.loaderDots[index] = false;
+            });
+
             dotLoader = $interval(function() {
                 $scope.loaderDots[dotIndex] = true;
                 dotIndex++;
@@ -48,27 +63,75 @@ angular.module('boneyard')
             }, DOT_LOAD_DELAY);
         }
 
-        $scope.images = [];
+        $scope.specimens = [];
 
         $scope.loadMore = function() {
-            var last = $scope.images[$scope.images.length - 1] || -1;
             for (var i = 1; i <= 8; i++) {
-                $scope.images.push(last + i);
+                $scope.specimens.push({});
             }
+            //$scope.openDetails($scope.specimens[0]);
         };
 
-        function initialize() {
-            $scope.specimens = [{}];
+        $scope.openDetails = function(specimen) {
+            specimen.selected = true;
+            $scope.rowSelected = true;
 
             $timeout(function() {
-                $scope.isLoaded = true;
+                $scope.isListLoaded = false;
+                $scope.isDotsLoaded = false;
+
+                $('html, body').animate({
+                    scrollTop: $('.specimens--list').offset().top
+                }, 400);
+            }, 600);
+
+            $timeout(function() {
+                $scope.isDetailLoaded = true;
+            }, 1000);
+        };
+
+        function resetDetails() {
+            _.forEach($scope.specimens, function(specimen) {
+                specimen.selected = false;
+            });
+
+            $scope.rowSelected = false;
+            $scope.isDetailLoaded = false;
+        }
+
+        function resetSearch() {
+            $scope.isDotsLoaded = true;
+            $scope.loadData = false;
+            $scope.isListLoaded = false;
+        }
+
+        function search() {
+            // Reset if detailed view if open
+            if ($scope.isDetailLoaded) {
+                resetDetails();
+            }
+
+            // Reset search
+            resetSearch();
+            playSearch();
+        }
+
+        function playSearch() {
+            $timeout(function() {
+                $scope.isListLoaded = true;
             }, LOAD_DELAY);
 
             $timeout(function() {
                 $scope.loadData = true;
             }, LOAD_DELAY + DATA_LOAD_DELAY_OFFSET);
 
-            loadDots();
+            playDots();
+        }
+
+        function initialize() {
+            $scope.specimens = [{}];
+
+            search();
         }
 
         initialize();
