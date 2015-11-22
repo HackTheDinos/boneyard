@@ -17,20 +17,20 @@ ActiveRecord::Schema.define(version: 20151122023346) do
   enable_extension "plpgsql"
 
   create_table "rendered_assets", force: :cascade do |t|
-    t.integer  "specimen_id_id"
+    t.integer  "specimen_id"
     t.string   "uri"
     t.string   "name"
     t.string   "type"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "scans", force: :cascade do |t|
-    t.integer  "specimen_id_id"
+    t.integer  "specimen_id"
     t.string   "preview_uri"
     t.text     "images"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "specimen", force: :cascade do |t|

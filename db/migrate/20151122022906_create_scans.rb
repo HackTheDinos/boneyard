@@ -1,7 +1,7 @@
 class CreateScans < ActiveRecord::Migration
   def change
     create_table :scans do |t|
-      t.belongs_to :specimen_id
+      t.belongs_to :specimen
       t.string :preview_uri
       t.text :images
       t.timestamps null: false
