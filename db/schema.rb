@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20151122051436) do
   create_table "scans", force: :cascade do |t|
     t.integer  "specimen_id",                       null: false
     t.string   "preview_uri"
-    t.text     "images",                            null: false
+    t.text     "images"
     t.string   "status",      default: "uploading", null: false
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false

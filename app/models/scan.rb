@@ -4,7 +4,7 @@ class Scan < ActiveRecord::Base
   validates :specimen, presence: true
   validates :status, inclusion: { in: ['uploading', 'uploaded'] }
 
-  serializes :images
+  serialize :images
 
   after_initialize :ensure_defaults
 

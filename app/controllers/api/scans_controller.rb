@@ -7,7 +7,7 @@ class Api::ScansController < Api::BaseController
   end
 
   def update
-    success = Scan.update_attributes(update_params)
+    success = @scan.update_attributes(update_params)
     return render_validation_errors(@scan) unless success
     render json: @scan
   end
@@ -30,10 +30,10 @@ class Api::ScansController < Api::BaseController
   end
 
   def update_params
-    params.permit(:status).merge(specimen: @specimen)
+    params.permit(:status)
   end
 
   def create_params
-    params.permit(:images, :preview_uri)
+    params.permit(:images, :preview_uri).merge(specimen: @specimen)
   end
 end
