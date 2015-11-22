@@ -2,11 +2,16 @@ angular.module('boneyard')
     .factory('SpecimenService', function ($resource, Specimen) {
         'use strict';
 
-        var service = $resource('/specimens', {}, {});
+        var service = $resource('/api/specimens/:id', { id: '@id' }, {});
 
-        function all() {
-            return service.query().$promise
+        function all(parameters) {
+            return service.query(parameters || {}).$promise
                 .then(buildInstances);
+        }
+
+        function find() {
+            return service.get().$promise
+                .then(buildInstance);
         }
 
         function buildInstances(attributes) {
@@ -18,7 +23,8 @@ angular.module('boneyard')
         }
 
         return {
-            all: all
+            all: all,
+            find: find
         };
 
     });

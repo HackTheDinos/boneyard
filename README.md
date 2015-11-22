@@ -1,7 +1,7 @@
 Boneyard
 ============
 
-UI to explore bones.
+UI to explore bones. See it live (http://boneyard.io)
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/HackTheDinos/boneyard)
 

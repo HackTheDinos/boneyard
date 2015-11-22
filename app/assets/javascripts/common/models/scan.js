@@ -6,7 +6,7 @@ angular.module('boneyard')
         'use strict';
 
         var INSTANCE_PROPERTIES = [
-            'tiffs', 'preview'
+            'id', 'specimen_id', 'preview_uri', 'images', 'status', 'created_at', 'updated_at'
         ];
 
         function Scan(attributes) {

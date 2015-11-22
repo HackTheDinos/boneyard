@@ -1,8 +1,8 @@
 angular.module('boneyard')
-    .factory('ScanService', function($resource, Scan) {
+    .factory('RenderedAssetService', function($resource, RenderedAsset) {
         'use strict';
 
-        var service = $resource('/api/scans/:id', { id: '@id' }, {});
+        var service = $resource('/api/rendered_assets/:id', { id: '@id' }, {});
 
         function all() {
             return service.query().$promise
@@ -19,7 +19,7 @@ angular.module('boneyard')
         }
 
         function buildInstance(attributes) {
-            return new Scan(attributes);
+            return new RenderedAsset(attributes);
         }
 
         return {
