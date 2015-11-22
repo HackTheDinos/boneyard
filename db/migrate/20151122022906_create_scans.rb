@@ -3,7 +3,7 @@ class CreateScans < ActiveRecord::Migration
     create_table :scans do |t|
       t.belongs_to :specimen, null: false
       t.string :preview_uri
-      t.text :images, null: false
+      t.text :images
       t.string :status, null: false, default: 'uploading'
       t.timestamps null: false
     end

@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 20151122051436) do
 
   create_table "rendered_assets", force: :cascade do |t|
     t.integer  "specimen_id",                       null: false
-    t.string   "uri",                               null: false
-    t.string   "name",                              null: false
+    t.string   "uri"
+    t.string   "name"
     t.string   "status",      default: "uploading", null: false
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
